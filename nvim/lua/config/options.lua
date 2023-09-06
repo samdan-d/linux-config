@@ -1,7 +1,11 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
-vim.opt.winbar = "%=%m %f"
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+local opt = vim.opt
+opt.winbar = "%=%m %f"
+
+opt.hlsearch = false
+opt.incsearch = true
+opt.clipboard = "unnamed"
+opt.list = false

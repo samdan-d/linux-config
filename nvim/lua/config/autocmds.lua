@@ -6,7 +6,7 @@
 vim.api.nvim_create_autocmd("VimEnter", {
   group = vim.api.nvim_create_augroup("restore_session", { clear = true }),
   callback = function()
-    require("persistence").load()
+    require("persistence").load({ last = true })
   end,
   nested = true,
 })
