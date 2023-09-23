@@ -17,7 +17,7 @@ return {
   cmd = { "TSUpdateSync" },
   keys = {
     { "<c-space>", desc = "Increment selection" },
-    { "<bs>", desc = "Decrement selection", mode = "x" },
+    { "<bs>",      desc = "Decrement selection", mode = "x" },
   },
   opts = {
     highlight = { enable = true },
@@ -43,6 +43,7 @@ return {
       "vim",
       "vimdoc",
       "yaml",
+      "scss"
     },
     incremental_selection = {
       enable = true,
