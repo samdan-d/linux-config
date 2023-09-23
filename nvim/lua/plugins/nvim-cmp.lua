@@ -14,6 +14,20 @@ return {
     local luasnip = require("luasnip")
     local cmp = require("cmp")
 
+    opts.preselect = cmp.PreselectMode.None
+    opts.completion = {
+      completeopt = "",
+    }
+    opts.window = {
+      documentation = cmp.config.window.bordered({
+        border = "rounded",
+        winhighlight = "Normal:CmpPmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+      }),
+      completion = cmp.config.window.bordered({
+        winhighlight = "Normal:CmpPmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+        border = "rounded",
+      }),
+    }
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
       ["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
