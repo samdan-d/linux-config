@@ -13,7 +13,7 @@ return {
 
     local luasnip = require("luasnip")
     local cmp = require("cmp")
-
+    vim.cmd([[set pumblend=0]])
     opts.preselect = cmp.PreselectMode.None
     opts.completion = {
       completeopt = "",
