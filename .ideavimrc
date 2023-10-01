@@ -1,0 +1,108 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+let mapleader=" "
+set scrolloff=10
+set surround
+
+" Do incremental searching.
+set incsearch
+set hlsearch
+
+" Don't use Ex mode, use Q for formatting.
+mapQ gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+" Tree plugin
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
+
+map  <leader>n :NERDTreeToggle<CR>
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-f)
+
+" Move to line
+map <Leader>l <Plug>(easymotion-bd-jk)
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+set number relativenumber
+set clipboard=none
+set ignorecase
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+nnoremap <C-z> :action ToggleDistractionFreeMode<CR>
+nnoremap <leader>/ :action SplitVertically<CR>
+nnoremap <leader>- :action SplitHorizontally<CR>
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap L $
+nnoremap H ^
+vnoremap L $
+vnoremap H ^
+nnoremap <esc> :noh<cr><esc>
+
+map ]] <Action>(GotoNextElementUnderCaretUsage)
+map [[ <Action>(GotoPrevElementUnderCaretUsage)
+map <leader>s <Action>(SelectInProjectView)
+map R <Action>(RenameElement)
+map <leader>c <Action>(Stop)
+
+" Tabs
+nmap <leader>b] :action NextTab<CR>
+nmap <leader>b[ :action PreviousTab<CR>
+nmap <leader>bd :action CloseEditor<CR>
+
+" Errors
+nmap <leader>e] :action GotoNextError<CR>
+nmap <leader>e[ :action GotoPreviousError<CR>
+
+" search
+nmap <leader>fp :action GotoFile<CR>
+vmap <leader>fp :action GotoFile<CR>
+nmap <leader>fr :action RecentFiles<CR>
+vmap <leader>fr :action RecentFiles<CR>
+nmap <leader>ff :action FindInPath<CR>
+vmap <leader>ff :action FindInPath<CR>
+nnoremap U :action FindUsages <CR>
+vnoremap U :action FindUsages <CR>
+nnoremap ,e :action SearchEverywhere <CR
+
+" Yank to Clipboard
+nnoremap <leader>y "*y
+vnoremap <leader>y "*y
+nnoremap <leader>Y "*Y
+vnoremap <leader>Y "*Y
+nnoremap <leader>d "*d
+vnoremap <leader>d "*d
+nnoremap <leader>D "*D
+vnoremap <leader>D "*D
+nnoremap <leader>p "*p
+vnoremap <leader>p "*p
+nnoremap <leader>P "*P
+vnoremap <leader>P "*P
+
+" file navigation>
+set idearefactormode=keep
+" https://gist.github.com/plateauu/2850b551c934f4168fa4f6b56e8fb087"
+" https://github.com/JetBrains/ideavim/discussions/303
