@@ -28,6 +28,12 @@ Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
+Plug 'vim-matchit'
+Plug 'vim-matchit'
+Plug 'vim-scripts/argtextobj.vim'
+set quickscope
+
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 map  <leader>n :NERDTreeToggle<CR>
 " <Leader>f{char} to move to {char}
@@ -76,6 +82,7 @@ nmap <leader>bd :action CloseEditor<CR>
 " Errors
 nmap <leader>e] :action GotoNextError<CR>
 nmap <leader>e[ :action GotoPreviousError<CR>
+nmap <leader>e/ :action ShowErrorDescription<CR>
 
 " search
 nmap <leader>fp :action GotoFile<CR>
@@ -86,7 +93,7 @@ nmap <leader>ff :action FindInPath<CR>
 vmap <leader>ff :action FindInPath<CR>
 nnoremap U :action FindUsages <CR>
 vnoremap U :action FindUsages <CR>
-nnoremap ,e :action SearchEverywhere <CR
+nnoremap ,e :action SearchEverywhere <CR>
 
 " Yank to Clipboard
 nnoremap <leader>y "*y
