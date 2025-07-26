@@ -1,0 +1,16 @@
+.idea
+nvim.bak/
+configstore/
+firebase/
+fish/
+flutter/
+github-copilot/
+htop/
+iterm2*/
+jgit/
+linux-config/
+yarn/
+
+tmux/
+
+.DS_Store
